@@ -14,7 +14,7 @@
         }
         
         body {
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
             color: #fff;
             min-height: 100vh;
             overflow-x: hidden;
@@ -34,7 +34,7 @@
         
         .element {
             position: absolute;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 215, 0, 0.05);
             border-radius: 50%;
         }
         
@@ -70,6 +70,15 @@
             animation: float 18s infinite linear reverse;
         }
         
+        .element:nth-child(5) {
+            width: 70px;
+            height: 70px;
+            bottom: 40%;
+            right: 30%;
+            animation: float 14s infinite linear;
+            background: rgba(255, 255, 255, 0.03);
+        }
+        
         @keyframes float {
             0% { transform: translateY(0) rotate(0deg); }
             50% { transform: translateY(-20px) rotate(180deg); }
@@ -91,25 +100,36 @@
         /* Logo and header */
         .logo {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
         
         .logo-icon {
-            font-size: 2.8rem;
-            margin-right: 15px;
-            color: #4fc3f7;
-            text-shadow: 0 0 15px rgba(79, 195, 247, 0.7);
+            font-size: 4rem;
+            margin-bottom: 15px;
+            color: #FFD700;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
         }
         
         .logo-text {
-            font-size: 2.8rem;
+            font-size: 3.5rem;
             font-weight: 800;
-            background: linear-gradient(to right, #4fc3f7, #29b6f6);
+            background: linear-gradient(to right, #FFD700, #FFED4E, #FFFFFF);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            text-align: center;
+        }
+        
+        .logo-subtitle {
+            font-size: 1.2rem;
+            color: #FFD700;
+            margin-top: 10px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
         }
         
         /* Main content */
@@ -121,8 +141,8 @@
         }
         
         .tagline {
-            font-size: 1.2rem;
-            color: #b0bec5;
+            font-size: 1.3rem;
+            color: #FFD700;
             margin-bottom: 15px;
             text-transform: uppercase;
             letter-spacing: 3px;
@@ -130,20 +150,21 @@
         }
         
         h1 {
-            font-size: 4.2rem;
-            margin-bottom: 25px;
+            font-size: 3.8rem;
+            margin-bottom: 30px;
             line-height: 1.1;
-            background: linear-gradient(to right, #fff, #e3f2fd);
+            background: linear-gradient(to right, #FFD700, #FFED4E, #FFFFFF);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
         
         .highlight {
-            color: #4fc3f7;
+            color: #FFFFFF;
             position: relative;
             display: inline-block;
+            font-weight: 800;
         }
         
         .highlight::after {
@@ -153,15 +174,15 @@
             left: 0;
             width: 100%;
             height: 8px;
-            background: rgba(79, 195, 247, 0.2);
+            background: rgba(255, 215, 0, 0.4);
             z-index: -1;
             border-radius: 4px;
         }
         
         .description {
-            font-size: 1.3rem;
-            line-height: 1.6;
-            color: #cfd8dc;
+            font-size: 1.4rem;
+            line-height: 1.7;
+            color: #e0e0e0;
             margin-bottom: 40px;
             max-width: 700px;
             margin-left: auto;
@@ -170,123 +191,135 @@
         
         /* Countdown timer */
         .countdown-container {
-            margin: 40px 0;
+            margin: 50px 0;
             width: 100%;
-            max-width: 800px;
+            max-width: 900px;
         }
         
         .countdown-title {
-            font-size: 1.3rem;
-            margin-bottom: 25px;
-            color: #b0bec5;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: #FFD700;
+            font-weight: 600;
         }
         
         .countdown {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 25px;
         }
         
         .countdown-item {
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 12px;
-            padding: 25px 15px;
-            min-width: 130px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px 20px;
+            min-width: 150px;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s, box-shadow 0.3s;
         }
         
         .countdown-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            background: rgba(255, 215, 0, 0.08);
+            border: 1px solid rgba(255, 215, 0, 0.4);
         }
         
         .countdown-value {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: #4fc3f7;
+            font-size: 3.8rem;
+            font-weight: 800;
+            color: #FFD700;
             line-height: 1;
-            margin-bottom: 5px;
-            text-shadow: 0 0 10px rgba(79, 195, 247, 0.5);
+            margin-bottom: 10px;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
         }
         
         .countdown-label {
-            font-size: 1rem;
-            color: #b0bec5;
+            font-size: 1.1rem;
+            color: #FFFFFF;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
+            font-weight: 600;
         }
         
         /* Newsletter signup */
         .newsletter-container {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
-            padding: 40px;
-            max-width: 700px;
+            padding: 50px;
+            max-width: 800px;
             width: 100%;
-            margin: 40px 0;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 50px 0;
+            border: 1px solid rgba(255, 215, 0, 0.2);
             backdrop-filter: blur(10px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
         
         .newsletter-title {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: #fff;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #FFFFFF;
+            background: linear-gradient(to right, #FFD700, #FFFFFF);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
         
         .newsletter-text {
-            color: #b0bec5;
-            margin-bottom: 30px;
-            font-size: 1.1rem;
+            color: #d0d0d0;
+            margin-bottom: 35px;
+            font-size: 1.2rem;
             line-height: 1.6;
         }
         
         .newsletter-form {
             display: flex;
-            max-width: 500px;
+            max-width: 600px;
             margin: 0 auto;
         }
         
         .email-input {
             flex-grow: 1;
-            padding: 18px 20px;
+            padding: 20px 25px;
             border: none;
             border-radius: 50px 0 0 50px;
             background: rgba(255, 255, 255, 0.1);
             color: #fff;
-            font-size: 1rem;
+            font-size: 1.1rem;
             outline: none;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 215, 0, 0.3);
             border-right: none;
         }
         
+        .email-input:focus {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #FFD700;
+        }
+        
         .email-input::placeholder {
-            color: #90a4ae;
+            color: #b0b0b0;
         }
         
         .submit-btn {
-            background: linear-gradient(to right, #4fc3f7, #29b6f6);
-            color: white;
+            background: linear-gradient(to right, #FFD700, #FFED4E);
+            color: #1a1a1a;
             border: none;
             border-radius: 0 50px 50px 0;
-            padding: 0 35px;
-            font-size: 1rem;
-            font-weight: 600;
+            padding: 0 40px;
+            font-size: 1.1rem;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.3s;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 215, 0, 0.5);
             border-left: none;
         }
         
         .submit-btn:hover {
-            background: linear-gradient(to right, #29b6f6, #039be5);
-            box-shadow: 0 5px 15px rgba(41, 182, 246, 0.4);
+            background: linear-gradient(to right, #FFED4E, #FFFFFF);
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.5);
         }
         
         /* Features preview */
@@ -294,106 +327,141 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 25px;
-            margin: 50px 0;
-            max-width: 1000px;
+            gap: 30px;
+            margin: 60px 0;
+            max-width: 1100px;
         }
         
         .feature {
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 25px;
-            width: 220px;
+            border-radius: 20px;
+            padding: 30px 25px;
+            width: 240px;
             text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s;
+            border: 1px solid rgba(255, 215, 0, 0.15);
+            transition: all 0.4s;
         }
         
         .feature:hover {
-            transform: translateY(-8px);
-            background: rgba(255, 255, 255, 0.09);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            transform: translateY(-10px);
+            background: rgba(255, 215, 0, 0.08);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 215, 0, 0.4);
         }
         
         .feature-icon {
-            font-size: 2.5rem;
-            color: #4fc3f7;
-            margin-bottom: 20px;
+            font-size: 2.8rem;
+            color: #FFD700;
+            margin-bottom: 25px;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
         }
         
         .feature-title {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: #fff;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #FFFFFF;
         }
         
         .feature-text {
-            color: #b0bec5;
-            font-size: 0.95rem;
-            line-height: 1.5;
+            color: #d0d0d0;
+            font-size: 1rem;
+            line-height: 1.6;
         }
         
         /* Social links */
         .social-container {
-            margin: 40px 0;
+            margin: 50px 0;
         }
         
         .social-title {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: #b0bec5;
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: #FFD700;
+            font-weight: 600;
         }
         
         .social-links {
             display: flex;
-            gap: 20px;
+            gap: 25px;
         }
         
         .social-link {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.07);
             display: flex;
             align-items: center;
             justify-content: center;
             color: #fff;
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             text-decoration: none;
             transition: all 0.3s;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.2);
         }
         
         .social-link:hover {
-            background: #4fc3f7;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(79, 195, 247, 0.3);
+            background: #FFD700;
+            color: #1a1a1a;
+            transform: translateY(-8px) scale(1.1);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
         }
         
         /* Footer */
         .footer {
-            margin-top: 50px;
-            color: #90a4ae;
-            font-size: 0.95rem;
+            margin-top: 60px;
+            color: #b0b0b0;
+            font-size: 1rem;
             text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding-top: 30px;
+            border-top: 1px solid rgba(255, 215, 0, 0.1);
+            padding-top: 40px;
             width: 100%;
             max-width: 800px;
         }
         
+        .footer p {
+            margin-bottom: 10px;
+        }
+        
+        .footer strong {
+            color: #FFD700;
+        }
+        
         /* Responsive design */
-        @media (max-width: 768px) {
-            h1 {
+        @media (max-width: 992px) {
+            .logo-text {
                 font-size: 3rem;
             }
             
-            .description {
-                font-size: 1.1rem;
+            h1 {
+                font-size: 3.2rem;
             }
             
             .countdown-item {
-                min-width: 100px;
+                min-width: 130px;
+                padding: 25px 15px;
+            }
+            
+            .countdown-value {
+                font-size: 3.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .logo-text {
+                font-size: 2.5rem;
+            }
+            
+            h1 {
+                font-size: 2.7rem;
+            }
+            
+            .description {
+                font-size: 1.2rem;
+            }
+            
+            .countdown-item {
+                min-width: 110px;
                 padding: 20px 10px;
             }
             
@@ -403,7 +471,7 @@
             
             .newsletter-form {
                 flex-direction: column;
-                gap: 15px;
+                gap: 20px;
             }
             
             .email-input, .submit-btn {
@@ -412,26 +480,30 @@
             }
             
             .features-container {
-                gap: 15px;
+                gap: 20px;
             }
             
             .feature {
                 width: 100%;
-                max-width: 300px;
+                max-width: 320px;
             }
         }
         
         @media (max-width: 480px) {
             h1 {
-                font-size: 2.3rem;
+                font-size: 2.2rem;
             }
             
             .logo-text {
                 font-size: 2rem;
             }
             
+            .logo-icon {
+                font-size: 3rem;
+            }
+            
             .countdown-item {
-                min-width: 80px;
+                min-width: 85px;
                 padding: 15px 5px;
             }
             
@@ -440,19 +512,31 @@
             }
             
             .newsletter-container {
-                padding: 30px 20px;
+                padding: 35px 25px;
+            }
+            
+            .social-link {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
             }
         }
         
         /* Success message */
         .success-message {
-            background: rgba(76, 175, 80, 0.1);
-            border: 1px solid rgba(76, 175, 80, 0.3);
-            color: #a5d6a7;
-            padding: 15px;
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            color: #FFED4E;
+            padding: 20px;
             border-radius: 10px;
-            margin-top: 20px;
+            margin-top: 25px;
             display: none;
+            font-size: 1.1rem;
+        }
+        
+        .success-message i {
+            color: #FFD700;
+            margin-right: 10px;
         }
         
         /* Animation for the main content */
@@ -476,6 +560,49 @@
         .delay-3 { animation-delay: 0.5s; opacity: 0; }
         .delay-4 { animation-delay: 0.7s; opacity: 0; }
         .delay-5 { animation-delay: 0.9s; opacity: 0; }
+        
+        /* Wave separator */
+        .wave-separator {
+            width: 100%;
+            height: 100px;
+            position: relative;
+            margin: 40px 0;
+        }
+        
+        .wave-separator svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* Stats counter */
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin: 40px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #FFD700;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: #d0d0d0;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
     </style>
 </head>
 <body>
@@ -485,29 +612,50 @@
         <div class="element"></div>
         <div class="element"></div>
         <div class="element"></div>
+        <div class="element"></div>
     </div>
     
     <div class="container">
         <!-- Logo -->
         <div class="logo animated">
-            <div class="logo-icon"><i class="fas fa-newspaper"></i></div>
-            <div class="logo-text">NewsPortal</div>
+            <div class="logo-icon"><i class="fas fa-globe-asia"></i></div>
+            <div class="logo-text">SamudraBela</div>
+            <div class="logo-subtitle">News Portal</div>
         </div>
         
         <!-- Main content -->
         <div class="content">
-            <div class="tagline animated delay-1">The Future of News Is Coming</div>
-            <h1 class="animated delay-2">Stay Informed with <span class="highlight">SamudraBela</span> Newsportal</h1>
-            <!-- <p class="description animated delay-2">
-                We're building a revolutionary news platform that delivers accurate, timely, 
-                and personalized news from around the globe. Get ready for an immersive 
-                experience that puts you at the center of every story.
-            </p> -->
+            <div class="tagline animated delay-1">The Voice of Tomorrow's News</div>
+            <h1 class="animated delay-2">Dive Into the <span class="highlight">Ocean of Information</span></h1>
+            <p class="description animated delay-2">
+                SamudraBela brings you comprehensive news coverage from every corner of the world. 
+                Stay ahead with real-time updates, in-depth analysis, and stories that matter most to you.
+            </p>
+        </div>
+        
+        <!-- Stats counter -->
+        <div class="stats-container animated delay-2">
+            <div class="stat-item">
+                <div class="stat-value" id="journalists">50+</div>
+                <div class="stat-label">Journalists</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="countries">120+</div>
+                <div class="stat-label">Countries</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="categories">25+</div>
+                <div class="stat-label">Categories</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="languages">15+</div>
+                <div class="stat-label">Languages</div>
+            </div>
         </div>
         
         <!-- Countdown timer -->
         <div class="countdown-container animated delay-3">
-            <div class="countdown-title">Launching In</div>
+            <div class="countdown-title">Our Portal Launching In</div>
             <div class="countdown">
                 <div class="countdown-item">
                     <div class="countdown-value" id="days">10</div>
@@ -530,17 +678,17 @@
         
         <!-- Newsletter signup -->
         <div class="newsletter-container animated delay-4">
-            <h3 class="newsletter-title">Be the First to Know</h3>
+            <h3 class="newsletter-title">Be The First To Get Notified</h3>
             <p class="newsletter-text">
-                Subscribe to get exclusive early access, launch updates, and a special welcome offer 
-                when we go live. No spam, just important news about our launch.
+                Subscribe now to receive exclusive early access, launch day surprises, and personalized news 
+                recommendations. Join our community of informed readers before we officially launch.
             </p>
             <form class="newsletter-form" id="subscribe-form">
                 <input type="email" class="email-input" placeholder="Enter your email address" required>
                 <button type="submit" class="submit-btn">Notify Me</button>
             </form>
             <div class="success-message" id="success-message">
-                <i class="fas fa-check-circle"></i> Thank you! We'll notify you when we launch.
+                <i class="fas fa-check-circle"></i> Thank you! We'll notify you when SamudraBela launches.
             </div>
         </div>
         
@@ -548,50 +696,39 @@
         <div class="features-container animated delay-5">
             <div class="feature">
                 <div class="feature-icon"><i class="fas fa-bolt"></i></div>
-                <h4 class="feature-title">Real-Time Updates</h4>
-                <p class="feature-text">Breaking news as it happens with live coverage and updates.</p>
+                <h4 class="feature-title">Breaking News Alerts</h4>
+                <p class="feature-text">Instant notifications for major events and developing stories around the globe.</p>
             </div>
             <div class="feature">
-                <div class="feature-icon"><i class="fas fa-user-cog"></i></div>
-                <h4 class="feature-title">Personalized Feed</h4>
-                <p class="feature-text">News tailored to your interests with AI-powered recommendations.</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon"><i class="fas fa-globe"></i></div>
-                <h4 class="feature-title">Global Coverage</h4>
-                <p class="feature-text">Comprehensive reporting from local to international perspectives.</p>
+                <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                <h4 class="feature-title">In-Depth Analysis</h4>
+                <p class="feature-text">Go beyond headlines with expert insights and comprehensive reporting.</p>
             </div>
             <div class="feature">
                 <div class="feature-icon"><i class="fas fa-video"></i></div>
-                <h4 class="feature-title">Immersive Media</h4>
-                <p class="feature-text">High-quality videos, podcasts, and interactive stories.</p>
+                <h4 class="feature-title">Multimedia Stories</h4>
+                <p class="feature-text">Immersive videos, podcasts, and interactive visual journalism.</p>
             </div>
-        </div>
-        
-        <!-- Social links -->
-        <div class="social-container animated delay-5">
-            <div class="social-title">Follow Our Progress</div>
-            <div class="social-links">
-                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <div class="feature">
+                <div class="feature-icon"><i class="fas fa-user-shield"></i></div>
+                <h4 class="feature-title">Trusted Sources</h4>
+                <p class="feature-text">Verified information from credible journalists and fact-checked reports.</p>
             </div>
         </div>
         
         <!-- Footer -->
         <div class="footer animated delay-5">
-            <p>© 2023 NewsPortal. All rights reserved. | A next-generation news platform</p>
-            <p style="margin-top: 10px; font-size: 0.85rem;">Contact: info@newsportal.dev | +1 (555) 123-4567</p>
+            <p>© 2025 <strong>SamudraBela</strong>. All Rights Reserved. | A New Era in Digital Journalism</p>
+            <p style="margin-top: 10px; font-size: 0.85rem;">"SamudraBela" translates to "Ocean Wave" - Carrying news across the world like waves across the ocean.</p>
         </div>
     </div>
 
     <script>
         // Countdown Timer
         function updateCountdown() {
-            // Set the launch date (7 days from now)
+            // Set the launch date (10 days from now)
             const launchDate = new Date();
-            launchDate.setDate(launchDate.getDate() + 7);
+            launchDate.setDate(launchDate.getDate() + 10);
             launchDate.setHours(9, 0, 0, 0); // Set to 9 AM
             
             const now = new Date().getTime();
@@ -612,14 +749,49 @@
             // If the countdown is over
             if (distance < 0) {
                 clearInterval(countdownInterval);
-                document.querySelector(".countdown-title").textContent = "We're Live!";
-                document.querySelector(".countdown").innerHTML = '<div style="font-size: 1.5rem; padding: 20px;">Welcome to NewsPortal!</div>';
+                document.querySelector(".countdown-title").textContent = "We're Live! Welcome to SamudraBela!";
+                document.querySelector(".countdown").innerHTML = '<div style="font-size: 1.8rem; padding: 30px; color: #FFD700;">Dive into the ocean of information now!</div>';
             }
         }
         
         // Initialize countdown
         updateCountdown();
         const countdownInterval = setInterval(updateCountdown, 1000);
+        
+        // Animated stats counter
+        function animateStats() {
+            const journalists = document.getElementById('journalists');
+            const countries = document.getElementById('countries');
+            const categories = document.getElementById('categories');
+            const languages = document.getElementById('languages');
+            
+            const stats = [
+                { element: journalists, target: 50, current: 0, increment: 1 },
+                { element: countries, target: 120, current: 0, increment: 2 },
+                { element: categories, target: 25, current: 0, increment: 1 },
+                { element: languages, target: 15, current: 0, increment: 1 }
+            ];
+            
+            const interval = setInterval(() => {
+                let allCompleted = true;
+                
+                stats.forEach(stat => {
+                    if (stat.current < stat.target) {
+                        stat.current += stat.increment;
+                        if (stat.current > stat.target) stat.current = stat.target;
+                        stat.element.textContent = stat.current + '+';
+                        allCompleted = false;
+                    }
+                });
+                
+                if (allCompleted) {
+                    clearInterval(interval);
+                }
+            }, 50);
+        }
+        
+        // Start stats animation when page loads
+        window.addEventListener('load', animateStats);
         
         // Newsletter form submission
         document.getElementById('subscribe-form').addEventListener('submit', function(e) {
@@ -644,7 +816,7 @@
                 }, 5000);
                 
                 // In a real application, you would send the email to your server here
-                console.log('Subscribed email:', email);
+                console.log('Subscribed email for SamudraBela:', email);
             } else {
                 alert('Please enter a valid email address.');
             }
@@ -654,7 +826,7 @@
         const countdownItems = document.querySelectorAll('.countdown-item');
         countdownItems.forEach(item => {
             item.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-5px)';
+                this.style.transform = 'translateY(-8px)';
             });
             
             item.addEventListener('mouseleave', function() {
@@ -680,6 +852,15 @@
         document.querySelectorAll('.delay-1, .delay-2, .delay-3, .delay-4, .delay-5').forEach(el => {
             observer.observe(el);
         });
+        
+        // Add a subtle color pulse animation to the logo
+        const logoIcon = document.querySelector('.logo-icon');
+        setInterval(() => {
+            logoIcon.style.textShadow = '0 0 25px rgba(255, 215, 0, 0.9)';
+            setTimeout(() => {
+                logoIcon.style.textShadow = '0 0 20px rgba(255, 215, 0, 0.7)';
+            }, 500);
+        }, 3000);
     </script>
 </body>
 </html>
